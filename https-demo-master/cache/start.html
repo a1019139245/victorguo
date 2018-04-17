@@ -24,7 +24,6 @@
 </ul>
 <a href="page2.html">去第二页</a>
 <div class="text123"></div>
-
 <script src="./static/jquery.min.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
@@ -34,7 +33,7 @@ if ('serviceWorker' in navigator) {
 	navigator.serviceWorker.register('./sw-demo-cache.js', {
 		scope: './'
 	}).then(function (registration) {
-		$('#isSuccess').text('注册成功')
+		$('#isSuccess').text('注册成功');
         var serviceWorker;
         if (registration.installing) {
             serviceWorker = registration.installing;
