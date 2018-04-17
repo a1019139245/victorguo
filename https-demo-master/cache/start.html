@@ -34,8 +34,7 @@ if ('serviceWorker' in navigator) {
 	navigator.serviceWorker.register('./sw-demo-cache.js', {
 		scope: './'
 	}).then(function (registration) {
-		$('#isSuccess').text('注册成功');
-        alert(registration.scope)
+		$('#isSuccess').text(registration.scope)
         var serviceWorker;
         if (registration.installing) {
             serviceWorker = registration.installing;
