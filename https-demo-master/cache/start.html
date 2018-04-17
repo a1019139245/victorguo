@@ -58,7 +58,7 @@ if ('serviceWorker' in navigator) {
 	$('#isSupport').text('不支持');
 }
 $.ajax({
-	url: 'http://dev-siteconfig.siqibest.cn/api/webInfo/list',
+	url: './static/demo.json',
 	type: 'get',
 	dataType: 'json'
 }).done(function (response) {
