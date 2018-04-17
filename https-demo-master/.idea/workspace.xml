@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="start.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="start.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cache/start.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="57" column="32" lean-forward="true" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+            <state relative-caret-position="504">
+              <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -46,7 +46,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sw-demo-cache.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sw-demo-cache.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cache/sw-demo-cache.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
@@ -123,8 +123,8 @@
       <list>
         <option value="$PROJECT_DIR$/demo.json" />
         <option value="$PROJECT_DIR$/cache/static/demo.json" />
-        <option value="$PROJECT_DIR$/cache/start.html" />
         <option value="$PROJECT_DIR$/cache/sw-demo-cache.js" />
+        <option value="$PROJECT_DIR$/cache/start.html" />
       </list>
     </option>
   </component>
@@ -212,12 +212,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523931780476</updated>
-      <workItem from="1523931781717" duration="4609000" />
+      <workItem from="1523931781717" duration="4852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4609000" />
+    <option name="totallyTimeSpent" value="4852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -318,18 +318,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cache/start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="57" column="32" lean-forward="true" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cache/sw-demo-cache.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cache/start.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
           <folding />
         </state>
       </provider>
