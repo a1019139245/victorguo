@@ -1,10 +1,8 @@
-var VERSION = 'v7';
+var VERSION = 'v8';
 
 // 缓存
 self.addEventListener('install', function(event) {
   event.waitUntil(
-      // 安装阶段跳过等待，直接进入 active
-      self.skipWaiting()
     caches.open(VERSION).then(function(cache) {
       return cache.addAll([
         './start.html',
