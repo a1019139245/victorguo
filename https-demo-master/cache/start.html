@@ -52,7 +52,7 @@ if ('serviceWorker' in navigator) {
             });
         }
     }).catch (function (error) {
-        $('#isSuccess').text('注册没有成功');
+        $('#isSuccess').text(error);
     });
 } else {
 	$('#isSupport').text('不支持');
