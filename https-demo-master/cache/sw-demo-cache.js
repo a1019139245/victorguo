@@ -1,4 +1,4 @@
-var VERSION = 'v6';
+var VERSION = 'v7';
 
 // 缓存
 self.addEventListener('install', function(event) {
@@ -42,3 +42,19 @@ self.addEventListener('fetch', function(event) {
     return caches.match('./static/mm1.jpg');
   }));
 });
+
+self.addEventListener('offline', function () {
+    Notification.requestPermission().then(function(grant) {
+        if (grant !== 'granted') {
+            return;
+        }
+    const notification = new Notification("Hi，网络不给力哟", {
+        body: '您的网络貌似离线',
+        icon: '//lzw.me/images/avatar/lzwme-80x80.png'
+    })
+    notification.onclick = function () {
+        notification.close();
+    }
+    })
+});
+
