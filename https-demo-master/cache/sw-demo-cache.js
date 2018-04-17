@@ -5,7 +5,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(VERSION).then(function(cache) {
       return cache.addAll([
-        './start.html',
+        // './start.html',
         './static/jquery.min.js',
         './static/mm1.jpg'
       ]);
