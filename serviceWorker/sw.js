@@ -1,6 +1,6 @@
 'use strict';
 
-const version = 'lzwme_201703231500';
+const version = 'gt_v1';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = true;
 const offlineResources = [
