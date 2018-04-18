@@ -1,5 +1,5 @@
 {
-  "scope": "/",
+  "scope": "./",
   "name": "victorGuo",
   "short_name": "victorGuo",
   "start_url": "./index.html",
