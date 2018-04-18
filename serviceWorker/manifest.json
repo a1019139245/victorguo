@@ -2,7 +2,7 @@
   "scope": "/",
   "name": "victorGuo",
   "short_name": "victorGuo",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "description": "victorGuo",
   "dir": "rtl",
