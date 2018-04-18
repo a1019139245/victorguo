@@ -125,7 +125,7 @@ function offlineResponse(request) {
     if (request.url.match(/\.(jpg|png|gif|svg|jpeg)(\?.*)?$/)) {
         return caches.match('/wp-content/themes/Kratos/images/default.jpg');
     } else {
-        return caches.match('/offline.html');
+        return caches.match('./offline.html');
     }
 }
 
