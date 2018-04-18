@@ -5,7 +5,8 @@ const __DEVELOPMENT__ = false;
 const __DEBUG__ = true;
 const offlineResources = [
     './',
-    './offline.html'
+    './offline.html',
+    './jquery.min.js'
     // '/wp-content/themes/Kratos/images/default.jpg'
 ];
 
