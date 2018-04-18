@@ -6,8 +6,8 @@ const __DEBUG__ = true;
 const offlineResources = [
     './',
     './offline.html',
-    './jquery.min.js'
-    // '/wp-content/themes/Kratos/images/default.jpg'
+    './jquery.min.js',
+    './all.png'
 ];
 
 const ignoreCache = [
