@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gt_web缓存</title>
+</head>
+<body>
+缓存首页
+<a href="page2.html">第二页</a>
+<a href="page3.html">第三页</a>
+</body>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('./sw.js', {scope: './'})
+            .then(registration => console.log('ServiceWorker 注册成功！作用域为: ', registration.scope))
+            .catch(err => console.log('ServiceWorker 注册失败: ', err));
+    }
+</script>
+</html>
