@@ -103,6 +103,7 @@ function onClickNotify(event) {
 
 self.addEventListener('offline', function () {
     Notification.requestPermission().then(grant => {
+        window.alert(grant)
         if (grant !== 'granted') {
             return;
         }
