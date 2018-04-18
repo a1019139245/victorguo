@@ -1,0 +1,18 @@
+{
+  "scope": "/",
+  "name": "victorGuo",
+  "short_name": "victorGuo",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "description": "victorGuo",
+  "dir": "rtl",
+  "lang": "cn",
+  "orientation": "portrait",
+  "theme_color": "#3f51b5",
+  "background_color": "#fff",
+  "icons": [{
+    "src": "image/all.png",
+    "sizes": "80x80",
+    "type": "image/png"
+  }]
+}

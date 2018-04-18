@@ -22,6 +22,7 @@ const ignoreCache = [
     /https?:\/\/lzw.me\/wp\-admin/,
 ];
 
+
 // 慎重使用全局可变变量，因为 serviceWork 不可控的停止和重启，会导致它们的取值在后续读取时无法预测
 let port;
 
@@ -111,9 +112,9 @@ function onInstall(event) {
     event.waitUntil(
         caches.open(cacheKey('offline'))
             .then(cache => cache.addAll(offlineResources))
-        .then(() => log('installation complete! version: ' + version))
-.then(() => self.skipWaiting())
-);
+            .then(() => log('installation complete! version: ' + version))
+            .then(() => self.skipWaiting())
+    );
 }
 
 /**
