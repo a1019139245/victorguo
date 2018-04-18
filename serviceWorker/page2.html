@@ -7,5 +7,14 @@
 <body>
 <a href="index.html">首页</a>
 <a href="page3.html">第三页</a>
+<script>
+    $.ajax({
+        url: 'https://siteconfig.siqibest.com/api/webInfo/list',
+        type: 'get',
+        dataType: 'json'
+    }).done(function (response) {
+        console.log(response)
+    })
+</script>
 </body>
 </html>
