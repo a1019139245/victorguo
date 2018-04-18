@@ -69,17 +69,23 @@ function sendNotify(title, options, event) {
                 info: {title, options}
             });
         }
-
         return;
     }
-
-    const notificationPromise = self.registration.showNotification(title || 'Hi：', Object.assign({
-        body: '这是一个通知示例',
-        icon: '//lzw.me/images/avatar/lzwme-80x80.png',
-        tag: 'push'
-    }, options));
-
-    return event && event.waitUntil(notificationPromise);
+    const notification = new Notification("Hi，网络不给力哟", {
+        body: '您的网络貌似离线了,可访问部分网页',
+        icon: './image/all.png'
+    });
+    notification.onclick = function () {
+        notification.close();
+    };
+    //
+    // const notificationPromise = self.registration.showNotification(title || 'Hi：', Object.assign({
+    //     body: '这是一个通知示例',
+    //     icon: '//lzw.me/images/avatar/lzwme-80x80.png',
+    //     tag: 'push'
+    // }, options));
+    //
+    // return event && event.waitUntil(notificationPromise);
 }
 
 /**
