@@ -100,22 +100,22 @@ function onClickNotify(event) {
 })
 );
 }
-
-self.addEventListener('offline', function () {
-    Notification.requestPermission().then(grant => {
-        window.alert(grant)
-        if (grant !== 'granted') {
-            return;
-        }
-        const notification = new Notification("Hi，网络不给力哟", {
-            body: '您的网络貌似离线了!!!!',
-            icon: './image/all.png'
-        });
-        notification.onclick = function () {
-            notification.close();
-        };
-    });
-});
+//
+// self.addEventListener('offline', function () {
+//     Notification.requestPermission().then(grant => {
+//         window.alert(grant)
+//         if (grant !== 'granted') {
+//             return;
+//         }
+//         const notification = new Notification("Hi，网络不给力哟", {
+//             body: '您的网络貌似离线了!!!!',
+//             icon: './image/all.png'
+//         });
+//         notification.onclick = function () {
+//             notification.close();
+//         };
+//     });
+// });
 
 // const notification = new Notification("Hi，网络不给力哟", {
 //     body: '您的网络貌似离线了,可访问部分网页',
@@ -301,22 +301,22 @@ self.addEventListener("push", onPush);
 self.addEventListener("sync", onSync);
 self.addEventListener('message', onMessage);
 self.addEventListener("notificationclick", onClickNotify);
-
-window.addEventListener('beforeinstallprompt', function(event) {
-    // 阻止该行为，只需要返回 false
-    // event.preventDefault();
-    // deferredPrompt = event;
-    // return false;
-    // 统计用户的选择
-    event.userChoice.then(function(choiceResult) {
-        console.log(choiceResult.outcome); // 为 dismissed 或 accepted
-        if(choiceResult.outcome === 'dismissed') {
-            alert('quxiao')
-            console.log('User cancelled home screen install');
-        } else {
-            alert('tianjia')
-            console.log('User added to home screen');
-        }
-    });
-});
+//
+// window.addEventListener('beforeinstallprompt', function(event) {
+//     // 阻止该行为，只需要返回 false
+//     // event.preventDefault();
+//     // deferredPrompt = event;
+//     // return false;
+//     // 统计用户的选择
+//     event.userChoice.then(function(choiceResult) {
+//         console.log(choiceResult.outcome); // 为 dismissed 或 accepted
+//         if(choiceResult.outcome === 'dismissed') {
+//             alert('quxiao')
+//             console.log('User cancelled home screen install');
+//         } else {
+//             alert('tianjia')
+//             console.log('User added to home screen');
+//         }
+//     });
+// });
 
