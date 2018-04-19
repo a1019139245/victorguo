@@ -1,6 +1,6 @@
 'use strict';
 
-const version = 'gt_v7';
+const version = 'gt_v8';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = true;
 const offlineResources = [
@@ -117,6 +117,7 @@ self.addEventListener('install', onInstall);
 function onInstall(event) {
     log('install event in progress.');
     log(Notification)
+    new Notification('hi')
     event.waitUntil(
         caches.open(cacheKey('offline'))
             .then(cache => cache.addAll(offlineResources)) //添加需要缓存的静态资源
