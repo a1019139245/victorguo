@@ -5,7 +5,7 @@
     <link rel="manifest" href="manifest.json?v=1">
     <title>gt_web缓存</title>
 </head>
-<body>
+<body onoffline="offline()">
 缓存首页
 缓存首页
 缓存首页
@@ -20,7 +20,7 @@
             .then(registration => console.log('ServiceWorker 注册成功！作用域为: ', registration.scope))
             .catch(err => console.log('ServiceWorker 注册失败: ', err));
     }
-    document.body.addEventListener('offline', function () {
+    function offline () {
         console.log('offline')
         Notification.requestPermission().then(grant => {
             console.log(grant)
