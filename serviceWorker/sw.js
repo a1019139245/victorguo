@@ -1,6 +1,6 @@
 'use strict';
 
-const version = 'gt_v7';
+const version = 'gt_v8';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = true;
 const offlineResources = [
@@ -233,8 +233,8 @@ function removeOldCache() {
                 .filter(key => !key.startsWith(version)) // 过滤不需要删除的资源
             .map(key => {
                 console.log('缓存', caches)
-                caches.delete(key)
-            }) // 删除旧版本资源，返回为 Promise 对象
+                // caches.delete(key)
+            // }) // 删除旧版本资源，返回为 Promise 对象
 )
 )
 .then(() => {
