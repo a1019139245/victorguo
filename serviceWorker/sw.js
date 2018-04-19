@@ -201,19 +201,13 @@ function networkedOrOffline(request) {
 function onFetch(event) {
     const request = event.request;
     console.log('fetch1', request)
-    Notification.requestPermission().then(grant => {
-        console.log(grant)
-        if (grant !== 'granted') {
-            return;
-        }
-        const notification = new Notification("Hi，网络不给力哟", {
-            body: '您的网络貌似离线了!!!!',
-            icon: './image/all.png'
-        });
-        notification.onclick = function () {
-            notification.close();
-        };
+    const notification = new Notification("Hi，网络不给力哟", {
+        body: '您的网络貌似离线了!!!!',
+        icon: './image/all.png'
     });
+    notification.onclick = function () {
+        notification.close();
+    };
     // 应当永远从网络请求的资源
     // 如果请求失败，则使用离线资源替代
     if (shouldAlwaysFetch(request)) {
