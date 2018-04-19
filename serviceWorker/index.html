@@ -16,9 +16,25 @@
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
-            .register('./sw.js?v=15', {scope: './'})
+            .register('./sw.js?v=16', {scope: './'})
             .then(registration => console.log('ServiceWorker 注册成功！作用域为: ', registration.scope))
             .catch(err => console.log('ServiceWorker 注册失败: ', err));
     }
+    document.body.addEventListener('offline', function () {
+        console.log('offline')
+        Notification.requestPermission().then(grant => {
+            console.log(grant)
+            if (grant !== 'granted') {
+                return;
+            }
+            const notification = new Notification("Hi，网络不给力哟", {
+                body: '您的网络貌似离线了!!!!',
+                icon: './image/all.png'
+            });
+            notification.onclick = function () {
+                notification.close();
+            };
+        });
+    });
 </script>
 </html>
