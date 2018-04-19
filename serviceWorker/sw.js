@@ -1,6 +1,6 @@
 'use strict';
 
-const version = 'gt_v6';
+const version = 'gt_v7';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = true;
 const offlineResources = [
