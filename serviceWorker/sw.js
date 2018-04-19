@@ -102,13 +102,13 @@ function onClickNotify(event) {
 }
 
 
-const notification = new Notification("Hi，网络不给力哟", {
-    body: '您的网络貌似离线了,可访问部分网页',
-    icon: './image/all.png'
-});
-notification.onclick = function () {
-    notification.close();
-};
+// const notification = new Notification("Hi，网络不给力哟", {
+//     body: '您的网络貌似离线了,可访问部分网页',
+//     icon: './image/all.png'
+// });
+// notification.onclick = function () {
+//     notification.close();
+// };
 /**
  * Install 安装
  */
