@@ -116,7 +116,7 @@ self.addEventListener('install', onInstall);
 
 function onInstall(event) {
     log('install event in progress.');
-    const notification = new Notification("你好");
+    log(Notification)
     event.waitUntil(
         caches.open(cacheKey('offline'))
             .then(cache => cache.addAll(offlineResources)) //添加需要缓存的静态资源
