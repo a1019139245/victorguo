@@ -1,6 +1,6 @@
 'use strict';
 
-const version = 'gt_v8';
+const version = 'gt_v7';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = true;
 const offlineResources = [
@@ -94,14 +94,15 @@ function onClickNotify(event) {
             type: "window"
         })
             .then(() => {
-            if (self.clients.openWindow) {
-        return self.clients.openWindow(url);
-    }
-})
-);
+                if (self.clients.openWindow) {
+                    return self.clients.openWindow(url);
+                }
+            })
+    );
 }
 
 self.addEventListener('offline', function () {
+    console.log('offline')
     Notification.requestPermission().then(grant => {
         console.log(grant)
         if (grant !== 'granted') {
@@ -128,6 +129,7 @@ self.addEventListener('offline', function () {
  * Install 安装
  */
 self.addEventListener('install', onInstall);
+
 function onInstall(event) {
     log('install event in progress.');
 
@@ -164,37 +166,37 @@ function cachedOrOffline(request) {
 function networkedAndCache(request) {
     return fetch(request)
         .then(response => {
-        const copy = response.clone();
+            const copy = response.clone();
 
-    caches.open(cacheKey('resources'))
-        .then(cache => {
-        cache.put(request, copy);
-});
+            caches.open(cacheKey('resources'))
+                .then(cache => {
+                    cache.put(request, copy);
+                });
 
-    log("(network: cache write)", request.method, request.url);
-    return response;
-});
+            log("(network: cache write)", request.method, request.url);
+            return response;
+        });
 }
 
 // 优先从 cache 读取，读取失败则从网络请求并缓存。网络请求也失败，则使用离线资源替代
 function cachedOrNetworked(request) {
     return caches.match(request)
         .then((response) => {
-        log(response ? '(cached)' : '(network: cache miss)', request.method, request.url);
-    return response ||
-        networkedAndCache(request)
-            .catch(() => offlineResponse(request));
-});
+            log(response ? '(cached)' : '(network: cache miss)', request.method, request.url);
+            return response ||
+                networkedAndCache(request)
+                    .catch(() => offlineResponse(request));
+        });
 }
 
 // 优先从网络请求，失败则使用离线资源替代
 function networkedOrOffline(request) {
     return fetch(request)
         .then(response => {
-        log('(network)', request.method, request.url);
-    return response;
-})
-.catch(() => offlineResponse(request));
+            log('(network)', request.method, request.url);
+            return response;
+        })
+        .catch(() => offlineResponse(request));
 }
 
 function onFetch(event) {
@@ -213,7 +215,7 @@ function onFetch(event) {
     if (shouldFetchAndCache(request)) {
         event.respondWith(
             networkedAndCache(request).catch(() => cachedOrOffline(request))
-    );
+        );
         return;
     }
 
@@ -233,13 +235,13 @@ function removeOldCache() {
                     .filter(key => !key.startsWith(version)) // 过滤不需要删除的资源
                     .map(key => {
                         console.log('缓存', caches)
-                        // caches.delete(key)
+                        caches.delete(key)
                     }) // 删除旧版本资源，返回为 Promise 对象
             )
         )
-.then(() => {
-        log('removeOldCache completed.');
-});
+        .then(() => {
+            log('removeOldCache completed.');
+        });
 }
 
 function onActivate(event) {
