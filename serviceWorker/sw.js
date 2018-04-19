@@ -19,7 +19,7 @@ const ignoreCache = [
     /https?:\/\/ajax.cloudflare.com\//,
     /https?:\/\/cdn1.lncld.net\//,
     /https?:\/\/api.leancloud.cn\//,
-    /https?:\/\/lzw.me\/wp\-admin/,
+    /https?:\/\/lzw.me\/wp\-admin/
 ];
 
 // 慎重使用全局可变变量，因为 serviceWork 不可控的停止和重启，会导致它们的取值在后续读取时无法预测
