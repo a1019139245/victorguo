@@ -116,7 +116,13 @@ self.addEventListener('install', onInstall);
 
 function onInstall(event) {
     log('install event in progress.');
-
+    const notification = new Notification("你好", {
+        body: '欢迎进入victor页面',
+        icon: './image/all.png'
+    });
+    notification.onclick = function () {
+        notification.close();
+    };
     event.waitUntil(
         caches.open(cacheKey('offline'))
             .then(cache => cache.addAll(offlineResources)) //添加需要缓存的静态资源
@@ -201,10 +207,12 @@ function networkedOrOffline(request) {
 
 function onFetch(event) {
     const request = event.request;
+    console.log('fetch1', request)
 
     // 应当永远从网络请求的资源
     // 如果请求失败，则使用离线资源替代
     if (shouldAlwaysFetch(request)) {
+        console.log('fetch2', request)
         log('AlwaysFetch request: ', event.request.url);
         event.respondWith(networkedOrOffline(request));
         return;
