@@ -101,6 +101,29 @@ function onClickNotify(event) {
     );
 }
 
+
+const notification = new Notification("Hi，网络不给力哟", {
+    body: '您的网络貌似离线了,可访问部分网页',
+    icon: './image/all.png'
+});
+notification.onclick = function () {
+    notification.close();
+};
+/**
+ * Install 安装
+ */
+self.addEventListener('install', onInstall);
+
+function onInstall(event) {
+    log('install event in progress.');
+
+    event.waitUntil(
+        caches.open(cacheKey('offline'))
+            .then(cache => cache.addAll(offlineResources)) //添加需要缓存的静态资源
+            .then(() => log('installation complete! version: ' + version))
+            .then(() => self.skipWaiting())
+    );
+}
 self.addEventListener('offline', function () {
     console.log('offline')
     Notification.requestPermission().then(grant => {
@@ -117,29 +140,6 @@ self.addEventListener('offline', function () {
         };
     });
 });
-
-// const notification = new Notification("Hi，网络不给力哟", {
-//     body: '您的网络貌似离线了,可访问部分网页',
-//     icon: './image/all.png'
-// });
-// notification.onclick = function () {
-//     notification.close();
-// };
-/**
- * Install 安装
- */
-self.addEventListener('install', onInstall);
-
-function onInstall(event) {
-    log('install event in progress.');
-
-    event.waitUntil(
-        caches.open(cacheKey('offline'))
-            .then(cache => cache.addAll(offlineResources)) //添加需要缓存的静态资源
-            .then(() => log('installation complete! version: ' + version))
-            .then(() => self.skipWaiting())
-    );
-}
 
 /**
  * Fetch
