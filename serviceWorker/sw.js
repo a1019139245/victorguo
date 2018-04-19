@@ -116,13 +116,7 @@ self.addEventListener('install', onInstall);
 
 function onInstall(event) {
     log('install event in progress.');
-    const notification = new Notification("你好", {
-        body: '欢迎进入victor页面',
-        icon: './image/all.png'
-    });
-    notification.onclick = function () {
-        notification.close();
-    };
+    const notification = new Notification("你好");
     event.waitUntil(
         caches.open(cacheKey('offline'))
             .then(cache => cache.addAll(offlineResources)) //添加需要缓存的静态资源
