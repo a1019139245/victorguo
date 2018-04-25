@@ -247,6 +247,7 @@ function onPush(event) {
     }, event);
 }
 
+
 /**
  * onSync
  */
